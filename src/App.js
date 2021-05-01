@@ -4,16 +4,19 @@ import api from './Api/Api';
 import Ballot from './Components/Ballot/Ballot';
 
 function App() {
-  //fetch data
+  //state vars
   const [ ballotData, setBallotData ] = useState([]);
+  const [ formSelection, setSelection ] = useState([]);
+
+  //fetch data
   useEffect(() => {
     api.getBallotData()
       .then((res) => {
-        console.log('then res',res.items)
           setBallotData(res.items)
       })
   }, [])
-  console.log('outerdata', ballotData, )
+
+  
   return (
     <div className="App">
       <header className="App-header">
