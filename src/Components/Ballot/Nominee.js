@@ -1,13 +1,20 @@
 import React from 'react'
 
 const Nominee = (props) => {
-return (
-  <div className='nomineeContainer'>
+  
+  return (
+    <div className='nomineeContainer'>
     {props.category.items.map((nominee) => {
+      var category = props.category.id;
+      if (props.selectionData[category] !== undefined) {
+        var isSelected = props.selectionData[category].id === nominee.id;
+      }
+
       return <div
               id={nominee.title}
               className='nominee'
               key={nominee.title}
+              style={{background: `${isSelected ? '#099BB3' : '#009B86'}`}}
               >
             <h2> {nominee.title} </h2>
             <img 

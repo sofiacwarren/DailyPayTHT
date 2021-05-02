@@ -11,10 +11,13 @@ const Modal = (props) => {
             </div>
         })}
         <div className='modal-footer'> 
+        <form>
           <button
-          type='button'
-          onClick={()=>{props.handleClose()}}
+          type='submit'
+          onSubmit={()=>{props.handleClose()}}
           >Close</button> 
+        </form>
+          
         </div>
       </div>
     </div>

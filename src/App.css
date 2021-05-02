@@ -24,10 +24,16 @@
   color: #61dafb;
 }
 
+/* ballot */
+
 .category {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.catHeader {
+  text-transform: capitalize;
 }
 
 .nomineeContainer {
@@ -49,13 +55,14 @@
   background: #34AC9C
 }
 
+/* nominee select button */
+
 .selectButton {
   display: inline-block;
   background-color: #009B86;
   border-radius: 10px;
   border: 4px double #cccccc;
   text-align: center;
-  /* text-overflow: ; */
   font-size: 16px;
   padding: 10px;
   width: 200px;
@@ -68,13 +75,29 @@
   background-color: #34AC9C;
 }
 
+/* ballot submit button */
+.submitButton {
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.submitButton:hover {
+  background-color: #099BB3;
+}
+
+/* modal */
 .outer {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100%;
-  width: 100%; */
   top: 0;
   right: 0;
   bottom: 0;
@@ -93,31 +116,3 @@
   border-bottom: 1px, solid, black;
 }
 
-.catHeader {
-  text-transform: capitalize;
-}
-
-.submitButton {
-  border-radius: 10px;
-  border: 4px double #cccccc;
-  text-align: center;
-  font-size: 16px;
-  padding: 10px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.submitButton:hover {
-  background-color: #099BB3;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

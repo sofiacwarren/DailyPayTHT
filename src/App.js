@@ -8,7 +8,7 @@ function App() {
   //state vars
   const [ ballotData, setBallotData ] = useState([]);
   const [ formSelection, setSelection ] = useState({});
-  const [ submission, setSubmission ] = useState(false); //modal on
+  const [ submission, setSubmission ] = useState(false);
   
 
   //fetch data
@@ -18,14 +18,15 @@ function App() {
           setBallotData(res.items)
       })
   }, [])
+
   //handle nominee selection
-  function handleSelection (category, nominee) {
+  function handleSelection(category, nominee) {
     setSelection({...formSelection, [category]: nominee})
-    // document.getElementById(nominee.title) ? document.getElementById(nominee.title).style.backgroundColor = "#099BB3" :
+    
   }
 
+  //handle ballot submission -> confirmation and modal open
   function handleSubmission () {
-    console.log('submitted')
     if (Object.keys(formSelection).length === ballotData.length) {
       setSubmission(true)
     }
@@ -34,9 +35,10 @@ function App() {
     }
   }
   
+  //close modal and reset page
   function handleClose () {
     setSubmission(false);
-    // setSelection({});
+    setSelection({})
   }
 
   return (
@@ -50,10 +52,10 @@ function App() {
           handleClose={handleClose}
         /> :
         null}
-        
-      <form>
+      <div>
         <Ballot 
           data={ballotData}
+          selectionData={formSelection}
           handleSelection={handleSelection}
         />
         <button 
@@ -61,7 +63,7 @@ function App() {
           type='button'
           onClick={handleSubmission}
             >Submit Ballot</button>
-      </form>
+      </div>
       
     </div>
   );
