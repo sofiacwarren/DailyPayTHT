@@ -6,7 +6,9 @@ import Ballot from './Components/Ballot/Ballot';
 function App() {
   //state vars
   const [ ballotData, setBallotData ] = useState([]);
-  const [ formSelection, setSelection ] = useState([]);
+  const [ formSelection, setSelection ] = useState({});
+  
+  
 
   //fetch data
   useEffect(() => {
@@ -16,18 +18,24 @@ function App() {
       })
   }, [])
 
+  function handleSelection (category, nominee) {
+    setSelection({...formSelection, [category]: nominee})
+    console.log('clickclickclick', category)
+
+  }
   
   return (
     <div className="App">
       <header className="App-header">
         <img src={'https://www.dailypay.com/wp-content/uploads/DailyPay-Logo-White.svg'} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
       </header>
-      <Ballot 
-        ballotData={ballotData}
-      />
+      <form>
+        <Ballot 
+          data={ballotData}
+          handleSelection={handleSelection}
+        />
+        <button>Submit Ballot</button>
+      </form>
     </div>
   );
 }
