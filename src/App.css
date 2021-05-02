@@ -108,11 +108,15 @@
 
 .view {
   background-color: #009B86;
+  border-radius: 5px;
+  padding: 24px;
+  color: #FFFFFF;
 }
 
 .modal-header, .modal-footer {
   padding: 10px;
   border-top: 1px, solid, black;
   border-bottom: 1px, solid, black;
+  color:#ffffff;
 }
 
