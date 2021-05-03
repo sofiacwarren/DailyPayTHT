@@ -49,6 +49,7 @@
   width: 450px;
   background: #009B86;
   border-radius: 50px;
+  margin: 5px;
 }
 
 .nominee:hover {
