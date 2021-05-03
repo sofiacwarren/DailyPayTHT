@@ -45,6 +45,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={'https://www.dailypay.com/wp-content/uploads/DailyPay-Logo-White.svg'} className="App-logo" alt="logo" />
+        <h2>Movie Awards 2021</h2>
       </header>    
         {submission ?
         <Modal

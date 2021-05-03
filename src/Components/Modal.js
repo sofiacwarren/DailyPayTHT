@@ -13,6 +13,7 @@ const Modal = (props) => {
         <div className='modal-footer'> 
         <form>
           <button
+          className='modal-button'
           type='submit'
           onSubmit={()=>{props.handleClose()}}
           >Close</button> 

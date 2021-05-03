@@ -6,7 +6,7 @@ const Ballot = (props) => {
     <div className='ballot'>
       {props.data.map((category) => {
         return<div className='category'
-                   key="category">
+                   key={category.title}>
               <h2 className='catHeader'>{category.id.replace(/-/g, ' ')}</h2>
               <Nominee
                 selectionData={props.selectionData}
